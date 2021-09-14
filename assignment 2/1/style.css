@@ -1,0 +1,71 @@
+
+/* decoration stuff ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: teal;
+}
+header {
+    background-color: white;
+    padding: 1.5em;
+    border-radius: 5px;
+    box-shadow: 0 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header > div {
+    display: flex;
+    color: green;
+}
+header h2{
+    margin: 0 1em;
+}
+header h2:hover {
+    color: purple;
+    cursor: pointer;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+}
+
+.container h1 {
+    background-color: black;
+    color: white;
+    padding: .5em 1em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+.container span {
+    color: plum;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 1em;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    
+    transition: background-color .3s ease-in-out;
+}
+button:hover {
+    background-color: grey;
+}
+/* ===========decoration stuff */
+
+
+.currentFlipper {
+    color: purple;
+    border-bottom: 2px solid purple;
+}

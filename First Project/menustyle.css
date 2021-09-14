@@ -1,0 +1,96 @@
+body {
+    background-color:antiquewhite;
+    color : black;
+    text-align : center;
+    box-sizing: border-box;
+    font-family: cursive;
+    line-height:25px;
+}
+#Name{
+    text-align: left;
+    margin: 20px;
+    line-height:30px;
+}
+hr{
+    margin-right: 15%;
+    border-color: rgb(80, 217, 235);/*for Chrome and Safari*/
+    background-color: rgb(80, 217, 235); /*for Opera and Firefox*/
+}
+
+    /*mobile first..........*/
+.dishes{
+    background-color: rgb(80, 217, 235);
+    border : 1px solid black;
+    width: 80%;
+    padding: 3px;
+    margin: 2.5vw auto;
+    position: relative;
+    border-radius: 5px;
+    transition: 300ms transform ease-in-out;
+}
+.dishes > h3{
+    position:absolute;
+        /*absolute to the sections*/    
+    right: 0;
+    top: 0;
+    margin: 0;
+               /*keeping away default margins of headers*/
+    border: inherit;
+    border-radius: inherit;
+    padding: 5px 20px;
+    color: white;
+}
+#Chicken{
+    background-color:teal;
+}
+#Beef{
+    background-color:tomato;
+}
+#Sushi{
+    background-color: olive;
+}
+.dishes p{
+    margin-top: 40px;
+         /*avoiding the overlaping of the texts and the heading (positioned absolute.)*/
+}
+.dishes:hover{
+    transform: scale(1.01, 1.01);
+}
+a{
+    color:purple;
+}
+a:hover{
+    color:red;
+}
+
+@media screen and (max-width: 992px) and (min-width: 768px) {
+        /*defining for the tablet*/
+    *{
+        box-sizing: border-box;
+    }
+    #dish1,#dish2 {
+        width: 47.5%;
+        float:left;
+        margin: 1%;
+    }
+    #dish3{
+        float: left;
+        margin: 1%;
+        width: 97%;
+    }
+}
+@media screen and (min-width: 992px) {
+            /*defining for the desktop*/
+    *{
+        box-sizing: border-box;
+    }
+    #dish1,#dish2,#dish3 {
+        width: 31.3%;
+        float:left;
+        margin: 1%;
+    }
+    address{
+        float:right;
+        margin: 5% 1%;
+    }
+}
