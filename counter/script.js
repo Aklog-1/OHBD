@@ -14,7 +14,7 @@ decrease.addEventListener("click", event => {
 reset.addEventListener("click", event => {
     number.textContent = 0;
 
-    numColor(0);
+    number.style.color = "black";
 });
 
 increase.addEventListener("click", event => {
@@ -31,6 +31,6 @@ const numColor = (number) => {
     } else if (number.textContent < 0) {
          number.style.color = "tomato";
     } else {
-        document.querySelector(".number").style.color = "black";
+        number.style.color = "black";
     }
 }
