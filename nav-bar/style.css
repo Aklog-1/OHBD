@@ -1,0 +1,80 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    color: purple;
+}
+header {
+    background-color: cadetblue;
+}
+.container {
+    padding: 2em 2em 2em 5em;
+    display: flex;
+    align-items: center;
+}
+.menu {
+    padding: .5em 1em;
+    font-size: 1rem;
+    margin-left: auto;
+    font-weight: 700;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-list {
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 2rem;
+    list-style: none;
+    height: 0;
+    overflow: hidden;
+    transition: height .5s ease-in-out;
+}
+
+.nav-list li:nth-of-type(odd) {
+    background-color:rgb(141, 182, 182);
+}
+.nav-list li:nth-of-type(even) {
+    background-color: gainsboro;
+}
+.nav-list li {
+    cursor: pointer;
+}
+.nav-list li:hover {
+    text-decoration: underline;
+}
+
+/* to be toggled */
+.show-nav-list{
+    height: 128px;
+}
+
+
+@media (min-width: 600px) {
+    header {
+        display: flex;
+        align-items: center;
+        padding-right: 2em;
+    }
+    .nav-list{
+        font-size: 1.2em;
+        flex-grow: 1;
+        display: flex;
+        gap: 1em;
+        height: auto;
+    }
+    .nav-list li {
+        background: none !important;
+    }
+    .nav-list li:nth-of-type(4) {
+        margin-left: auto;
+    }
+    .nav-list li:nth-of-type(1) {
+        margin-left: auto;
+    }
+    .menu{
+        display: none;
+
+    }
+}
