@@ -31,8 +31,6 @@ body {
 
     height: calc(26.4px + (var(--top-bottom-padding) * 2));
     overflow: hidden;
-
-    transition: height .2s ease-in-out;
 }
 
 .showAnswer {
