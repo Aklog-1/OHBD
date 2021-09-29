@@ -55,11 +55,6 @@ nav *:focus {
         flex-direction: column;
     }
 }
-@media (max-width: 300px) {
-    .main-content {
-        justify-content: space-evenly;
-    }
-}
 
 .img {
     display: block;
