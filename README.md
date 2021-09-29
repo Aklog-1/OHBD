@@ -8,4 +8,4 @@ https://aklog-1.github.io/OHBD/nav-bar/
 # General Questions
 https://aklog-1.github.io/OHBD/general-questions/
 # Menu
-https://aklog-1.github.io/OHBD/menu/
+https://aklog-1.github.io/OHBD/Menu/
