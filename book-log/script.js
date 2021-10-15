@@ -1,25 +1,18 @@
 
 
 const bookPile = document.querySelector(".book-pile")
-<<<<<<< HEAD
 let downArrowBtns = [];
-=======
-const downArrowBtns = [];
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 const overlay = document.querySelector(".overlay");
 const openBarBtn = document.querySelector(".open-bar-btn")
 const closeBarBtn = document.querySelector(".close-bar-btn")
 const searchInput = document.querySelector(".search-bar")
 
-<<<<<<< HEAD
 const addToCollectionBtn = document.querySelector(".add-to-collection-btn");
 const inputs = document.querySelectorAll(".input");
 
 const fiction = document.querySelector(".fiction");
 const reference = document.querySelector(".reference");
 const all = document.querySelector(".all")
-=======
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 
 const books = [
     {
@@ -94,13 +87,8 @@ const books = [
 
 ]
 
-<<<<<<< HEAD
 const renderBooks = (booksArray) => {
     booksArray.forEach(bk => {
-=======
-const renderBooks = (books) => {
-    books.forEach(bk => {
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 
         const book = document.createElement("div");
         book.classList.add("book");
@@ -153,7 +141,6 @@ const renderBooks = (books) => {
 
 renderBooks(books);
 
-<<<<<<< HEAD
 
 // ============ toggling book descriptions
 function descriptiontoggler() {
@@ -172,18 +159,6 @@ function descriptiontoggler() {
 }
 descriptiontoggler();
 
-=======
-downArrowBtns.forEach((btn, idx) => {
-    btn.addEventListener("click", (event) => {
-
-        event.preventDefault();
-        bookPile.children[idx].children[0].classList.toggle("current-book");
-        bookPile.children[idx].children[1].classList.toggle("show-book-details");
-        btn.classList.toggle("current-book");
-        btn.classList.toggle("rotate-arrow");
-    })
-})
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 
 
 // ==========mobile navigation bars
@@ -210,7 +185,6 @@ searchInput.addEventListener("input", () => {
                 book.classList.remove("hide");
             }
         }
-<<<<<<< HEAD
 })
 
 
@@ -268,6 +242,4 @@ all.addEventListener("click", () => {
     books.forEach((bk, idx) => {
         bookPile.children[idx].classList.remove("hide");
     })
-=======
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 })

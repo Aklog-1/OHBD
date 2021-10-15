@@ -35,18 +35,11 @@ body, html {
 body {
     font-family: "Kumbh Sans";
     color: var(--very-dark-desaturated-blue);
-<<<<<<< HEAD
     
     text-transform: capitalize;
 }
 * {
     box-sizing: border-box;
-=======
-}
-* {
-    box-sizing: border-box;
-    text-transform: capitalize;
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 }
 
 
@@ -71,11 +64,7 @@ body {
 main {
     width: var(--mobile-width);
     max-width: var(--mobile-max-width);
-<<<<<<< HEAD
     margin: 3em auto;
-=======
-    margin: 2em auto;
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 }
 .book {
     border-bottom: 1px solid gray;
@@ -201,15 +190,11 @@ header {
     width: 100%;
     padding: .75em;
     margin-bottom: 1em;
-<<<<<<< HEAD
     border: 2px solid var(--dark-grayish-blue);
-=======
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
     border-radius: 1rem;
 }
 
 
-<<<<<<< HEAD
 /* new book form */
 .new-book-container {
     text-align: center;
@@ -241,8 +226,6 @@ textarea.input {
 }
 
 
-=======
->>>>>>> 92e1849465fb51256305eca54a21c613d1813876
 /* open tabs */
 .overlay {
     height: 0%;
