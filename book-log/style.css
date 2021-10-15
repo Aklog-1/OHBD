@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --padding-top-bottom: 1em;
+    --padding-left-right: 2em;
+    --margin-right-hr: 40%;
+    --margin-top: 1rem;
+    --margin-bottom: .2rem;
+    --margin-bottom-book-titles: .1rem;
+    --margin-bottom-top-descritption: 1rem; 
+
+    --mobile-max-width: 375px;
+    --mobile-width: 85%;
+
+    --btn-font-size: 1.8em;
+    --book-title-fs: 1.3em;
+
+    --light-fw: 400;
+    --bold-fw: 700;
+
+
+        /* primary */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+        /* neutral */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+        
+}
+body, html {
+    margin: 0; padding: 0;
+    
+}
+body {
+    font-family: "Kumbh Sans";
+    color: var(--very-dark-desaturated-blue);
+    
+    text-transform: capitalize;
+}
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+/* layout */
+
+.header-container {
+    padding: var(--padding-top-bottom) 0;
+    width: var(--mobile-width);
+    max-width: var(--mobile-max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.foremost {
+    margin: auto;
+}
+
+
+main {
+    width: var(--mobile-width);
+    max-width: var(--mobile-max-width);
+    margin: 3em auto;
+}
+.book {
+    border-bottom: 1px solid gray;
+}
+
+.book-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.book-title {
+    margin-bottom: var(--margin-bottom);
+}
+
+hr {
+    margin-right: var(--margin-right-hr);
+}
+.book-details{
+    display: none;
+}
+.book-details > .description {
+    margin: var(--margin-bottom-top-descritption) 0;
+    text-transform: none;
+}
+
+
+
+/* color and typography */
+header {
+    background-color: teal;
+}
+
+.open-bar-btn {
+    background: none;
+    border: none;
+    font-size: var(--btn-font-size);
+    cursor: pointer;
+}
+
+.book-title {
+    font-size: var(--book-title-fs);
+    font-weight: var(--light-fw);
+}
+
+.author,
+.genre {
+    font-weight: var(--bold-fw);
+}
+.author span,
+.genre span {
+    font-weight: normal;
+}
+.description{
+    color: var(--dark-grayish-blue)
+}
+
+.down-arrow-btn {
+    background: none;
+    border: none;
+    font-size: var(--btn-font-size);
+    cursor: pointer;
+}
+.down-arrow-btn:hover,
+.down-arrow-btn:focus {
+    color: var(--soft-red);
+}
+
+
+/* for dom manipulation */
+.show-book-details {
+    display: block;
+}
+
+.down-arrow-btn {
+    transition: transform 300ms ease-in-out;
+}
+.rotate-arrow {
+    transform: rotate(180deg) translateY(-15px);
+}
+
+.current-book {
+    color:var(--soft-red);
+}
+
+
+
+
+
+/* for the overlay(the mobile menu tabs) */
+.close-bar-btn {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    cursor: pointer;
+}
+
+.nav-bar {
+    color: white;
+    list-style: none;
+    margin: 0; padding: 0;
+
+    font-size: var(--book-title-fs);
+    color: var(--soft-red);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.7;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nav-bar li:hover,
+.nav-bar li:focus {
+    opacity: .7;
+}
+
+
+/* search bar */
+.search-bar {
+    font-size: var(--book-title-fs)/2;
+    width: 100%;
+    padding: .75em;
+    margin-bottom: 1em;
+    border: 2px solid var(--dark-grayish-blue);
+    border-radius: 1rem;
+}
+
+
+/* new book form */
+.new-book-container {
+    text-align: center;
+    background: url("bg-intro-mobile.png");
+    width: var(--mobile-width);
+    max-width: var(--mobile-max-width);
+    margin: 2em auto;
+}
+.input{
+    width: 100%;
+    margin-bottom: var(--margin-bottom-top-descritption);
+    padding: var(--padding-top-bottom) var(--padding-left-right);
+}
+textarea.input {
+    height: 150px;
+    size-adjust:initial;
+    resize: none;
+}
+.new-book-form button {
+    padding: .8em var(--padding-left-right);
+    font-family: "Kumbh Sans";
+    font-weight: 700;
+    background: var(--soft-red);
+    border: none;
+}
+.add-to-collection-btn:hover,
+.add-to-collection-btn:focus {
+    opacity: .75;
+}
+
+
+/* open tabs */
+.overlay {
+    height: 0%;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    position: fixed;
+    background: rgba(0, 0, 0, .85);
+    transition: height 300ms ease-in-out;
+}
+.show-overlay {
+    height: 100%;
+}
+
+
+
+
+/* show/hide */
+.hide {
+    display: none;
+}
