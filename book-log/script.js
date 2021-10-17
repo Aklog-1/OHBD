@@ -1,18 +1,21 @@
 
 
 const bookPile = document.querySelector(".book-pile")
-let downArrowBtns = [];
-const overlay = document.querySelector(".overlay");
+
+const overlay = document.querySelector(".overlay")
 const openBarBtn = document.querySelector(".open-bar-btn")
 const closeBarBtn = document.querySelector(".close-bar-btn")
+const fiction = document.querySelector(".fiction")
+const reference = document.querySelector(".reference")
+const all = document.querySelector(".all")
+
 const searchInput = document.querySelector(".search-bar")
 
-const addToCollectionBtn = document.querySelector(".add-to-collection-btn");
-const inputs = document.querySelectorAll(".input");
+const addToCollectionBtn = document.querySelector(".add-to-collection-btn")
+const inputs = document.querySelectorAll(".input")
 
-const fiction = document.querySelector(".fiction");
-const reference = document.querySelector(".reference");
-const all = document.querySelector(".all")
+let deleteBookBtns = [];
+let titlesArray = [];
 
 const books = [
     {
@@ -23,7 +26,7 @@ const books = [
     },
 
     {
-        "title": "if tommorow comes",
+        "title": "if tomorrow comes",
         "author": "Sidney Sheldon",
         "genre": "fiction",
         "description": "Lorem ipsum dolor sit: amet consectetur adipisicing elit. Culpa: rerum minima! Nemo consequuntur similique itaque odio velit: optio ratione: assumenda: quasi exercitationem culpa illum repellendus aspernatur quaerat esse iusto nostrum."
@@ -40,7 +43,7 @@ const books = [
         "title": "doomsday conspiracy",
         "author": "Sidney Sheldon",
         "genre": "fiction",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio adipisci sint impedit mollitia velit tempora ipsum culpa: alias laudantium: at exercitationem? In ab: sint illo incidunt doloribus temporibus omnis."
+        "description": "Lorem ipsum dolor sit: amet consectetur adipisicing elit. Culpa: rerum minima! Nemo consequuntur similique itaque odio velit: optio ratione: assumenda: quasi exercitationem culpa illum repellendus aspernatur quaerat esse iusto nostrum."
     },
 
     {
@@ -51,10 +54,10 @@ const books = [
     },
     
     {    
-        "title": "if tommorow comes 2",
+        "title": "if tomorrow comes 2",
         "author": "Tilly bagshawe",
         "genre": "fiction",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio adipisci sint impedit mollitia velit tempora ipsum culpa: alias laudantium: at exercitationem? In ab: sint illo incidunt doloribus temporibus omnis."
+        "description": "Lorem ipsum dolor sit: amet consectetur adipisicing elit. Culpa: rerum minima! Nemo consequuntur similique itaque odio velit: optio ratione: assumenda: quasi exercitationem culpa illum repellendus aspernatur quaerat esse iusto nostrum."
     },
 
     {
@@ -75,7 +78,7 @@ const books = [
         "title": "Animal farm",
         "author": "-------",
         "genre": "fiction",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio adipisci sint impedit mollitia velit tempora ipsum culpa: alias laudantium: at exercitationem? In ab: sint illo incidunt doloribustemporibus omnis."
+        "description": "Lorem ipsum dolor sit: amet consectetur adipisicing elit. Culpa: rerum minima! Nemo consequuntur similique itaque odio velit: optio ratione: assumenda: quasi exercitationem culpa illum repellendus aspernatur quaerat esse iusto nostrum."
     } ,
 
     {
@@ -83,11 +86,37 @@ const books = [
         "author": "J.K. Rowling",
         "genre": "fiction",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio adipisci sint impedit mollitia velit tempora ipsum culpa: alias laudantium: at exercitationem? In ab: sint illo incidunt doloribus temporibus omnis."
+    },
+
+    {
+        "title": "Extreme chemistry",
+        "author": "Extreme dudes",
+        "genre": "reference",
+        "description": "Lorem ipsum dolor sit: amet consectetur adipisicing elit. Culpa: rerum minima! Nemo consequuntur similique itaque odio velit: optio ratione: assumenda: quasi exercitationem culpa illum repellendus aspernatur quaerat esse iusto nostrum."
+    },
+
+    {
+        "title": "galaxy Physics",
+        "author": "galaxy dudes",
+        "genre": "reference",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio adipisci sint impedit mollitia velit tempora ipsum culpa: alias laudantium: at exercitationem? In ab: sint illo incidunt doloribus temporibus omnis."
+    },
+
+    {
+        "title": "Extreme Biology",
+        "author": "extreme series",
+        "genre": "reference",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio adipisci sint impedit mollitia velit tempora ipsum culpa: alias laudantium: at exercitationem? In ab: sint illo incidunt doloribus temporibus omnis."
     }
 
 ]
 
 const renderBooks = (booksArray) => {
+
+    bookPile.innerHTML = '';
+    titlesArray = [];
+    deleteBookBtns = [];
+
     booksArray.forEach(bk => {
 
         const book = document.createElement("div");
@@ -101,9 +130,9 @@ const renderBooks = (booksArray) => {
         bookTitle.textContent = bk["title"]
         bookTitle.classList.add("book-title");
 
-        const downArrowBtn = document.createElement("button");
-        downArrowBtn.classList.add("down-arrow-btn");
-        downArrowBtn.textContent = "\u2304";
+        const deleteBookBtn = document.createElement("button");
+        deleteBookBtn.classList.add("delete-btn");
+        deleteBookBtn.textContent = "\u00D7";
 
         const bookDetails = document.createElement("div");
         bookDetails.classList.add("book-details");
@@ -122,16 +151,17 @@ const renderBooks = (booksArray) => {
         description.classList.add("description");
         description.textContent = bk["description"];
 
-        bookDetails.append(horizontal);
         bookTitleContainer.append(bookTitle);
-        bookTitleContainer.append(downArrowBtn);
+        bookTitleContainer.append(deleteBookBtn);
 
+        bookDetails.append(horizontal);
         bookDetails.append(author);
         bookDetails.append(genre);
         bookDetails.append(description);
 
-        // to an array of all the arrow btns.
-        downArrowBtns.push(downArrowBtn);
+        // to the arrays of title and delete btns
+        titlesArray.push(bookTitle);
+        deleteBookBtns.push(deleteBookBtn);
 
         book.append(bookTitleContainer);
         book.append(bookDetails);
@@ -139,25 +169,18 @@ const renderBooks = (booksArray) => {
     })
 }
 
-renderBooks(books);
-
 
 // ============ toggling book descriptions
 function descriptiontoggler() {
 
-    downArrowBtns.forEach((btn, idx) => {
-        btn.addEventListener("click", (event) => {
-    
-            event.preventDefault();
-            bookPile.children[idx].children[0].classList.toggle("current-book");
+    titlesArray.forEach((title, idx) => {
+        title.addEventListener("click", () => {
+
             bookPile.children[idx].children[1].classList.toggle("show-book-details");
-            btn.classList.toggle("current-book");
-            btn.classList.toggle("rotate-arrow");
-            console.log("hello")
+            title.classList.toggle("current-book");
         })
     })
 }
-descriptiontoggler();
 
 
 
@@ -170,21 +193,21 @@ openBarBtn.addEventListener("click", (event) => {
 closeBarBtn.addEventListener("click", (event) => {
     event.preventDefault();
     overlay.classList.remove("show-overlay");
-
 })
 
 
 // ============= searching bar
 searchInput.addEventListener("input", () => {
 
-    for(let book of bookPile.children) {
+    bookPile.childNodes.forEach(book => {
+        // used childNodes - forEach doesn't work on children.
 
-            if(book.children[0].children[0].textContent.toLowerCase().indexOf(searchInput.value.toLowerCase()) === -1) {
-                book.classList.add("hide");
-            } else {
-                book.classList.remove("hide");
-            }
+        if(book.children[0].children[0].textContent.toLowerCase().indexOf(searchInput.value.toLowerCase()) === -1) {
+            book.classList.add("hide");
+        } else {
+            book.classList.remove("hide");
         }
+    })
 })
 
 
@@ -193,29 +216,26 @@ addToCollectionBtn.addEventListener("click", event => {
 
     event.preventDefault();
 
-    const bookInfoRecieve = [];
+    const bookInfoRecieved = [];
     inputs.forEach(input => {
-        bookInfoRecieve.push(input.value);
+        bookInfoRecieved.push(input.value);
         input.value = '';
     })
 
     const bookInfo = {
-        "title": bookInfoRecieve[0],
-        "author": bookInfoRecieve[1],
-        "genre": bookInfoRecieve[2],
-        "description": bookInfoRecieve[3]
+        "title": bookInfoRecieved[0],
+        "author": bookInfoRecieved[1],
+        "genre": bookInfoRecieved[2],
+        "description": bookInfoRecieved[3]
     };
     books.push(bookInfo)
 
-    bookPile.innerHTML = '';
-    downArrowBtns = [];
-
-    renderBooks(books);
-    descriptiontoggler();
+    refresh();
 })
 
-fiction.addEventListener("click", () => {
 
+// genre togglers
+fiction.addEventListener("click", () => {
     
     books.forEach((bk, idx) => {
         bookPile.children[idx].classList.add("hide");
@@ -227,7 +247,6 @@ fiction.addEventListener("click", () => {
 
 reference.addEventListener("click", () => {
 
-    
     books.forEach((bk, idx) => {
         bookPile.children[idx].classList.add("hide");
         if(bk.genre.toLowerCase() === "reference") {
@@ -238,8 +257,30 @@ reference.addEventListener("click", () => {
 
 all.addEventListener("click", () => {
 
-    
     books.forEach((bk, idx) => {
         bookPile.children[idx].classList.remove("hide");
     })
 })
+
+
+
+function deleteBook() {
+    deleteBookBtns.forEach((button, index) => {
+        button.addEventListener("click", event => {
+            event.preventDefault();
+            books.splice(index, 1);
+
+            refresh();
+        })
+    })
+}
+
+
+
+function refresh() {
+
+    renderBooks(books);
+    deleteBook();
+    descriptiontoggler();
+}
+refresh();

@@ -1,33 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    
+    <title>Book log</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="overlay">
-        <button class="close-bar-btn">&#x274C;</button>
-
-        <ul class="nav-bar">
-            <li class="all">all</li>
-            <li class="fiction">fictions</li>
-            <li class="reference">references</li>
-        </ul>
-    </div>
 
     <header>
         <div class="header-container">
             <button class="open-bar-btn"> &#9776; </button>
-            <h1 class="foremost">Booklogs</h1>  
+            <h1 class="foremost">Booklogs</h1>
+
+            <!-- an overlay with navigation bars -->
+            <div class="overlay">
+                <button class="close-bar-btn">&#x274C;</button>
+
+                <ul class="nav-bar">
+                    <li class="all">all</li>
+                    <li class="fiction">fictions</li>
+                    <li class="reference">references</li>
+                </ul>
+            </div>
         </div>
 
     </header>
-
 
 
     <main>
@@ -37,10 +39,11 @@
         <div class="book-pile">
             
         </div>
+
         <!-- <div class="book">
             <div class="book-title-container">
                 <h1 class="book-title">title</h1>
-                <button class="down-arrow-btn"> &#8964; </button>
+                <button class="delete-btn"> &times; </button>
             </div>
             
             <div class="book-details">
@@ -78,3 +81,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
